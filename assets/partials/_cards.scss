@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.show-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  @include hover-scale(1.08);
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: $border-radius-sm;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include gradient-overlay(to top, 0.7);
+    opacity: 0;
+    @include transition(opacity);
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}

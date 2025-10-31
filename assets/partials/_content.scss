@@ -1,0 +1,29 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+main {
+  padding: 0 $spacing-md;
+  
+  @include mobile {
+    padding: 0 $spacing-sm;
+  }
+}
+
+.content-section {
+  margin-bottom: $spacing-lg;
+  
+  .section-title {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    padding-left: 0.25rem;
+    
+    @include tablet {
+      font-size: 1.6rem;
+    }
+    
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+}

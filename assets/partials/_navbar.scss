@@ -1,0 +1,72 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.navbar {
+  background-color: $netflix-black;
+  padding: $spacing-xs $spacing-md;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    
+    @include tablet {
+      width: 130px;
+    }
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: $border-radius-sm;
+    object-fit: cover;
+  }
+  
+  .navbar-nav {
+    .nav-link {
+      color: $text-secondary !important;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: $spacing-xs $spacing-sm;
+      @include transition(color);
+      
+      &:hover {
+        color: $text-muted !important;
+      }
+      
+      &.active {
+        color: $text-primary !important;
+        font-weight: 700;
+      }
+    }
+  }
+  
+  .navbar-nav.ms-auto {
+    .nav-link {
+      color: $text-primary !important;
+      
+      &:hover {
+        color: $text-secondary !important;
+      }
+    }
+  }
+  
+  .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid $border-gray;
+    
+    .dropdown-item {
+      color: $text-primary;
+      
+      &:hover {
+        background-color: $border-gray;
+      }
+    }
+  }
+  
+  @include mobile {
+    padding: $spacing-xs $spacing-sm;
+  }
+}

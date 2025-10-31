@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.tv-shows-header {
+  padding: $spacing-md $spacing-md $spacing-sm;
+  
+  h1 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .btn {
+    background-color: transparent;
+    border: 1px solid $text-secondary;
+    color: $text-primary;
+    font-size: 0.9rem;
+    padding: 0.4rem $spacing-sm;
+    @include transition(all);
+    
+    &:hover {
+      background-color: $border-gray;
+      border-color: $text-primary;
+      color: $text-primary;
+    }
+  }
+  
+  .view-toggles {
+    display: flex;
+    gap: $spacing-xs;
+    
+    .btn {
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
+  @include mobile {
+    padding: 1.5rem $spacing-sm $spacing-sm;
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .d-flex {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: $spacing-sm !important;
+    }
+  }
+}

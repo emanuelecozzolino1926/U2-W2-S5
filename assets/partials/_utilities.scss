@@ -1,0 +1,27 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.dropdown-toggle::after {
+  margin-left: $spacing-xs;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.text-netflix {
+  color: $netflix-red;
+}
+
+.bg-netflix {
+  background-color: $netflix-red;
+}
+
+.hover-opacity {
+  @include transition(opacity);
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}

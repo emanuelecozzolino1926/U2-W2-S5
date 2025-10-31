@@ -1,0 +1,71 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+footer {
+  background-color: $netflix-black;
+  color: $text-muted;
+  margin-top: $spacing-xl;
+  
+  .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    
+    a {
+      color: $text-muted;
+      font-size: 1.5rem;
+      @include transition(color);
+      
+      &:hover {
+        color: $text-primary;
+      }
+    }
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 0.75rem;
+      
+      a {
+        color: $text-muted;
+        text-decoration: none;
+        font-size: $font-size-sm;
+        @include transition(color);
+        
+        &:hover {
+          color: $text-primary;
+        }
+      }
+    }
+  }
+  
+  .service-code-btn {
+    border-color: $text-muted;
+    color: $text-muted;
+    font-size: $font-size-sm;
+    padding: $spacing-xs 1.5rem;
+    
+    &:hover {
+      background-color: $text-muted;
+      color: $netflix-black;
+    }
+  }
+  
+  .copyright {
+    font-size: 0.75rem;
+    color: $text-muted;
+    margin: 0;
+  }
+  
+  @include mobile {
+    padding: $spacing-md $spacing-sm !important;
+  }
+}

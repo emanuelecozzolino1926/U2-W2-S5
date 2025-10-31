@@ -1,0 +1,202 @@
+@use 'partials/variables' as *;
+
+.profile-page {
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profile-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: $text-primary;
+}
+
+.profile-divider {
+  border-color: $border-gray;
+  opacity: 1;
+  margin: 2rem 0;
+}
+
+.section-divider {
+  border-color: $border-gray;
+  opacity: 0.3;
+  margin: 2rem 0;
+}
+
+.profile-avatar-section {
+  display: inline-block;
+
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+}
+
+.profile-form {
+  .profile-input {
+    background-color: $border-gray;
+    border: none;
+    color: $text-primary;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+
+    &:focus {
+      background-color: $text-muted;
+      color: $text-primary;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  .profile-label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $text-primary;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-dropdown {
+    background-color: transparent;
+    border: 1px solid $text-muted;
+    color: $text-primary;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    text-align: left;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      background-color: $border-gray;
+      border-color: $text-primary;
+      color: $text-primary;
+    }
+  }
+
+  .maturity-btn {
+    background-color: $border-gray;
+    border: none;
+    color: $text-primary;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+
+    &:hover {
+      background-color: $text-muted;
+    }
+  }
+
+  .maturity-text {
+    color: $text-muted;
+    font-size: 0.95rem;
+    margin: 1rem 0;
+  }
+
+  .edit-btn {
+    border-color: $text-muted;
+    color: $text-muted;
+    font-size: 0.85rem;
+    padding: 0.4rem 2rem;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $text-primary;
+      color: $text-primary;
+    }
+  }
+
+  .form-check-input {
+    background-color: transparent;
+    border: 2px solid $text-muted;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $text-primary;
+      border-color: $text-primary;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .form-check-label {
+    color: $text-primary;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.profile-actions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  .btn {
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-width: 2px;
+
+    &.btn-light {
+      background-color: $text-primary;
+      color: $netflix-black;
+      border: none;
+
+      &:hover {
+        background-color: $netflix-red;
+        color: $text-primary;
+      }
+    }
+
+    &.btn-outline-secondary {
+      border-color: $text-muted;
+      color: $text-muted;
+
+      &:hover {
+        border-color: $text-primary;
+        color: $text-primary;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .profile-title {
+    font-size: 2rem;
+  }
+
+  .profile-avatar-section .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-avatar-section .edit-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 1rem;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

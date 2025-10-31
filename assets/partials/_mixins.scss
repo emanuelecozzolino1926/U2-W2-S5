@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+@mixin transition($property: all, $duration: $transition-speed, $timing: $transition-timing) {
+  transition: $property $duration $timing;
+}
+
+@mixin hover-scale($scale: 1.05, $duration: $transition-speed) {
+  @include transition(transform, $duration);
+  
+  &:hover {
+    transform: scale($scale);
+    z-index: 10;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradient-overlay($direction: to top, $opacity: 0.7) {
+  background: linear-gradient($direction, rgba(0, 0, 0, $opacity) 0%, transparent 50%);
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
